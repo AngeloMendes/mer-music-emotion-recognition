@@ -4,12 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-gdown = "*"
+networkx = "*"
+tensorflow = "==1.15.2"
 pandas = "*"
-numpy = "*"
-seaborn = "*"
+sklearn = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.7.12"
