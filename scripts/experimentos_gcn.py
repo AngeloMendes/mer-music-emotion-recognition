@@ -200,12 +200,15 @@ if __name__ == '__main__':
     start = sys.argv[1]
     end = sys.argv[2]
 
+    if start <= end:
+        break
+
     folder_path = "../experimentos"
     grafos = glob(f"{folder_path}/grafos/*/*")
 
     df = pd.read_csv(f"{folder_path}/df_baseline.tsv", sep='\t')
     run = 4
-    for grafo in grafos:
+    for grafo in grafos[start:end]:
         evaluation = []
         G = nx.read_gpickle(f'{grafo}')
         grau = f"grau_{grafo.split('experimentos/')[1].split('/')[1]}"
